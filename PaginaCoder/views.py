@@ -80,7 +80,11 @@ def profesores(request):
             informacion3 = mi_formulario2.cleaned_data
             profesores_guardar = Profesor(
                 nombre=informacion3['nombre'],
-                apellido=informacion3['apellido'])
+                apellido=informacion3['apellido'],
+                email=informacion3['email']
+
+            )
+
             profesores_guardar.save()
 
     todos_profesores = Profesor.objects.all()

@@ -1,0 +1,2 @@
+Se han creado tres clases: Cursos, Estudiantes y Profesores (se encuentra en el archivo models.py)
+En cada una de ellas hay un formulario pidiendo datos a los usuarios. Estos formularios se encuentran realizados en views.py junto con sus correspondientes templates
