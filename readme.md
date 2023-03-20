@@ -1,2 +1,3 @@
 Se han creado tres clases: Cursos, Estudiantes y Profesores (se encuentra en el archivo models.py)
-En cada una de ellas hay un formulario pidiendo datos a los usuarios. Estos formularios se encuentran realizados en views.py junto con sus correspondientes templates
+En cada una de ellas hay un formulario pidiendo datos a los usuarios. Estos formularios se encuentran realizados en views.py junto con sus correspondientes templates. 
+Hay dos urls para poder guiar a los codigos que escribimos. Tambien, esta la carpeta Migrate con las clases ya mencionadas anteriormente. El super admin es Lucas y su contraseña es python. Esto nos sirve para poder visualizar bien la base de datos.
