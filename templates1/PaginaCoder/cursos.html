@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block modificacion %}
+   <form action="{% url 'PaginaCoderCursos'%}" method="post">
+       {% csrf_token %}
+       {{ form.as_p }}
+       <input type="submit" value="Enviar">
+   </form>
+   <br><hr>
+   <form action="{% url 'PaginaCoderBuscandoCursos' %}">
+       {{ form_buscar.as_p }}
+       <input type="submit" value="Buscar">
+   </form>
+   <hr><br>
+   {% if cursos %}
+       {% for curso in cursos %}
+           <p>curso {{ curso.nombre }} </p>
+           <p>camada: {{ curso.camada }}</p>
+       {% endfor %}
+   {% else %}
+       <h1>No hay cursos</h1>
+   {% endif %}
+{% endblock %}

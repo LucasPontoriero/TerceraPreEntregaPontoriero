@@ -1,3 +1,5 @@
 from django.contrib import admin
-
-# Register your models here.
+from PaginaCoder.models import Curso, Estudiantes, Profesor
+admin.site.register(Curso)
+admin.site.register(Estudiantes)
+admin.site.register(Profesor)

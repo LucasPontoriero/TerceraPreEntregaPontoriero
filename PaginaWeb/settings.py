@@ -55,7 +55,7 @@ ROOT_URLCONF = 'PaginaWeb.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / "templates1"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
