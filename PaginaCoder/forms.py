@@ -11,5 +11,7 @@ class EstudiantesForm(forms.Form):
     nombre = forms.CharField(min_length=4, max_length=20)
     apellido = forms.CharField(min_length=4, max_length=20)
 
-
+class ProfesoresForm(forms.Form):
+    nombre = forms.CharField(min_length=4, max_length=20)
+    apellido = forms.CharField(min_length=4, max_length=20)
 

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block modificacion %}
+   <form action="{% url 'PaginaCoderProfesores' %}" method="post">
+       {% csrf_token %}
+       {{ form.as_p }}
+       <input type="submit" value="Enviar">
+
+   </form>
+   <br><hr>
+   {% if Profesores %}
+       {% for profesor in Profesores %}
+           <p>Nombre: {{ profesores.nombre }} </p>
+           <p>Apellido: {{ profesores.apellido }}</p>
+       {% endfor %}
+
+   {% endif %}
+{% endblock %}

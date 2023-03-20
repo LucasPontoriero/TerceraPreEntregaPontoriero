@@ -1,7 +1,7 @@
 
-from django.shortcuts import render, redirect
-from PaginaCoder.models import Curso, Estudiantes
-from PaginaCoder.forms import CursoForm, BuscandoCursoForm, EstudiantesForm
+from django.shortcuts import render
+from PaginaCoder.models import Curso, Estudiantes, Profesor
+from PaginaCoder.forms import CursoForm, BuscandoCursoForm, EstudiantesForm, ProfesoresForm
 
 # Create your views here.
 def buscando_curso(request):
@@ -74,4 +74,29 @@ def guardar_estudiante(request, nombre, apellido):
 
 
 def profesores(request):
-    return render(request, "base.html")
+    if request.method == "POST":
+        mi_formulario2 = ProfesoresForm(request.POST)
+        if mi_formulario2.is_valid():
+            informacion3 = mi_formulario2.cleaned_data
+            profesores_guardar = Profesor(
+                nombre=informacion3['nombre'],
+                apellido=informacion3['apellido'])
+            profesores_guardar.save()
+
+    todos_profesores = Profesor.objects.all()
+    context = {
+        "profesores": todos_profesores,
+        "form": ProfesoresForm(),
+
+    }
+
+    return render(request, "PaginaCoder/Profesores.html", context=context)
+
+def guardar_profesor(request, nombre, apellido):
+    guardar_profesor =Profesor(nombre=nombre, apellido=(apellido))
+    guardar_profesor.save()
+    context = {
+        "nombre": nombre,
+        "apellido": apellido
+    }
+    return render (request, "PaginaCoder/Profesores.html",context=context)
