@@ -96,11 +96,4 @@ def profesores(request):
 
     return render(request, "PaginaCoder/Profesores.html", context=context)
 
-def guardar_profesor(request, nombre, apellido):
-    guardar_profesor =Profesor(nombre=nombre, apellido=(apellido))
-    guardar_profesor.save()
-    context = {
-        "nombre": nombre,
-        "apellido": apellido
-    }
-    return render (request, "PaginaCoder/Profesores.html",context=context)
+
